@@ -1,5 +1,6 @@
 package com.example.applicationchat;
 
+import com.example.applicationchat.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,15 +13,21 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class Controller {
+public class Controller extends Thread {
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField password;
 
 
     @FXML
         private Stage stage;
-        private Scene scene;
-        private Parent root;
     @FXML
-    public TextField userName;
+        private Scene scene;
+    @FXML
+        private Parent root;
 
 
         public void switchToScene1(ActionEvent event) throws IOException {
@@ -37,5 +44,13 @@ public class Controller {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        }
+        public void createUser(ActionEvent event) throws IOException{
+            String username = this.username.getText();
+            String email = this.email.getText();
+            String password=this.password.getText();
+            User user = new User(username,email,password);
+            System.out.println(user.CreateUser());
+            this.switchToScene2(event);
         }
     }

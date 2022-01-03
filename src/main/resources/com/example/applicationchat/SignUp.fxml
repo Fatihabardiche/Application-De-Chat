@@ -10,18 +10,18 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.applicationchat.Controller">
   <children>
-    <AnchorPane fx:id="pnSignUp" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0"  VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="pnSignUp" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <Text fill="#a535e1" layoutX="244.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FANOS" wrappingWidth="126.13665771484375">
                <font>
                   <Font name="Arial Rounded MT Bold" size="31.0" />
                </font>
             </Text>
-            <TextField layoutX="170.0" layoutY="107.0" prefHeight="26.0" prefWidth="247.0" promptText="UserName" />
-            <TextField layoutX="170.0" layoutY="146.0" prefHeight="26.0" prefWidth="247.0" promptText="Email" />
-            <PasswordField layoutX="170.0" layoutY="187.0" prefHeight="26.0" prefWidth="247.0" promptText="Password" />
+            <TextField fx:id="username" layoutX="170.0" layoutY="107.0" prefHeight="26.0" prefWidth="247.0" promptText="UserName" />
+            <TextField fx:id="email" layoutX="170.0" layoutY="146.0" prefHeight="26.0" prefWidth="247.0" promptText="Email" />
+            <PasswordField fx:id="password" layoutX="170.0" layoutY="187.0" prefHeight="26.0" prefWidth="247.0" promptText="Password" />
             <PasswordField layoutX="169.0" layoutY="229.0" prefHeight="26.0" prefWidth="247.0" promptText="Confirm Password" />
-            <Button fx:id="btnSignUp" layoutX="234.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #a535e1;" text="SignUp" />
+            <Button fx:id="btnSignUp" layoutX="234.0" layoutY="300.0" mnemonicParsing="false" onAction="#createUser" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #a535e1;" text="SignUp" />
             <Button fx:id="btn2" layoutX="33.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #a535e1;" text="&lt;&lt; " />
          </children>
     </AnchorPane>

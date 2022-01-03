@@ -4,6 +4,8 @@ module com.example.applicationchat {
     requires javafx.graphics;
     requires java.desktop;
     requires AnimateFX;
+    requires java.sql;
+    requires static lombok;
 
 
     opens com.example.applicationchat to javafx.fxml;
