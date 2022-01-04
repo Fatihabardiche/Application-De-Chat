@@ -23,25 +23,17 @@ public class User {
         this.email=email;
         this.password=password;
     }
-
-
     public boolean CreateUser() {
         boolean b;
         try {
             Statement st;
             st = con.createStatement();
-
             String sql = "insert into users (username,email,password) values ('"+this.username + "','" + this.email + "','" + this.password + "')";
             st.executeUpdate(sql);
-
             b = true;
-
         } catch (SQLException e) {
-
             b = false;
-
         }
-
         return b;
 
     }
