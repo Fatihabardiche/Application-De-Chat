@@ -1,15 +1,12 @@
 package com.example.applicationchat.models;
 
 import com.example.applicationchat.dao.MysqlConnection;
-import lombok.*;
+
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@NoArgsConstructor
-@Data
-@AllArgsConstructor
 public class User {
     private Integer id;
     private String username;

@@ -1,5 +1,6 @@
 package com.example.applicationchat;
 
+import com.example.applicationchat.dao.MysqlConnection;
 import com.example.applicationchat.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.BreakIterator;
 import java.util.Objects;
 
 
@@ -17,9 +24,17 @@ public class Controller extends Thread {
     @FXML
     private TextField username;
     @FXML
+    private TextField userName;
+    @FXML
+    private TextField pass;
+    @FXML
     private TextField email;
     @FXML
     private TextField password;
+
+    Connection conn = null;
+    ResultSet rs= null;
+    PreparedStatement pst = null;
 
 
     @FXML
@@ -53,4 +68,28 @@ public class Controller extends Thread {
             System.out.println(user.CreateUser());
             this.switchToScene2(event);
         }
+
+    @FXML
+    private void Login (ActionEvent event ) throws  Exception {
+        conn = MysqlConnection.getConn() ;
+        String sql = "select * from users where username = ? and password = ?" ;
+        try {
+            pst = conn.prepareStatement(sql);
+
+            pst.setString(1, userName.getText());
+            pst.setString(2, pass.getText());
+            rs = pst.executeQuery();
+            if(rs.next ()){
+                JOptionPane.showMessageDialog(null, "Username and password are correct");
+
+            }else
+                JOptionPane.showMessageDialog(null, "Invalid Username or password ");
+
+
+
+        }catch (Exception e ) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
+
+}
