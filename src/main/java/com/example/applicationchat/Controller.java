@@ -62,6 +62,13 @@ public class Controller extends Thread {
             stage.setScene(scene);
             stage.show();
         }
+    public void switchToScene3(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Room.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
         public void createUser(ActionEvent event) throws IOException, SQLException {
             String username = this.username.getText();
             String email = this.email.getText();
@@ -139,10 +146,11 @@ public class Controller extends Thread {
                     pst.setString(2, password.getText());
                     rs = pst.executeQuery();
                     if(rs.next ()){
-                        JOptionPane.showMessageDialog(null, "Username and password are correct");
+                        switchToScene3(event);
 
                     }else
-                        JOptionPane.showMessageDialog(null, "Invalid Username or password ");
+                        errors.setText("Invalid Username or password ");
+
 
 
 
