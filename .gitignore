@@ -355,5 +355,5 @@ MigrationBackup/
 *.iml
 *.ipr
 
-# Targer dir
+# Target dir
 target/
