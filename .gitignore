@@ -349,11 +349,11 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# Iml files
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
+*.ipr
 
 # Targer dir
 target/
-
-# Idea dir
-.idea/
