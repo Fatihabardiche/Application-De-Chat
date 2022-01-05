@@ -1,5 +1,6 @@
 package com.example.applicationchat;
 
+import com.example.applicationchat.dao.MysqlConnection;
 import com.example.applicationchat.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,19 +8,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.io.IOException;
+import java.sql.*;
 import java.util.Objects;
 
 
 public class Controller extends Thread {
+    MysqlConnection mysqlConnection =new MysqlConnection();
+    Connection con=mysqlConnection.getConn();
+
+    @FXML
+    private Label errors;
     @FXML
     private TextField username;
     @FXML
     private TextField email;
     @FXML
     private TextField password;
+    @FXML
+    private TextField confirmpassword;
 
 
     @FXML
@@ -28,6 +42,9 @@ public class Controller extends Thread {
         private Scene scene;
     @FXML
         private Parent root;
+    Connection conn = null;
+    ResultSet rs= null;
+    PreparedStatement pst = null;
 
 
         public void switchToScene1(ActionEvent event) throws IOException {
@@ -45,12 +62,93 @@ public class Controller extends Thread {
             stage.setScene(scene);
             stage.show();
         }
-        public void createUser(ActionEvent event) throws IOException{
+        public void createUser(ActionEvent event) throws IOException, SQLException {
             String username = this.username.getText();
             String email = this.email.getText();
             String password=this.password.getText();
+            String confirmpassword=this.confirmpassword.getText();
+            if(this.username.getText().isBlank() || this.email.getText().isBlank() ||  this.password.getText().isBlank()){
+                errors.setText("Les champs (*) sont obligatoires");
+                return;
+            }
+            String regEmail = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$";
+            System.out.println(email.matches(regEmail));
+            if(!email.matches(regEmail)) {;
+                Alert dialog = new Alert(AlertType.ERROR);
+                dialog.setTitle("ERREUR !");
+                dialog.setContentText("Email est invalide !!");
+                dialog.showAndWait();
+                return;
+            }
+            if(password.length()<8){
+                errors.setText("Le mot de passe doit dépasser 8 caractéres !!");
+                return;
+            }
+            //Username
+            if(this.CheckUsername(username)){
+                Alert dialog = new Alert(AlertType.ERROR);
+                dialog.setTitle("ERREUR !");
+                dialog.setContentText("username déjà pris !!");
+                dialog.showAndWait();
+            }
+            if(this.CheckUserEmail(email)){
+                Alert dialog = new Alert(AlertType.ERROR);
+                dialog.setTitle("ERREUR !");
+                dialog.setContentText("Email déjà pris !!");
+                dialog.showAndWait();
+                return;
+            }
+            if(!confirmpassword.equals(password)) {
+                errors.setText("les deux password ne sont pas identiques !!");
+                return;
+            }
+
+
+
             User user = new User(username,email,password);
             System.out.println(user.CreateUser());
             this.switchToScene2(event);
         }
+    private boolean CheckUsername(String username) throws SQLException {
+        Statement st;
+        st = con.createStatement();
+        String sql = "Select username from users where username = '"+username+"'";
+        ResultSet result = st.executeQuery(sql);
+        if(result.next())System.out.println(result.getString("username"));
+        return result.next();
+
+    }
+        private boolean CheckUserEmail(String email) throws SQLException {
+            Statement st;
+            st = con.createStatement();
+            String sql = "Select email from users where email = '"+email+"'";
+            ResultSet result = st.executeQuery(sql);
+
+            return result.next();
+
+        }
+
+            @FXML
+            private void Login (ActionEvent event ) throws Exception{
+                con = MysqlConnection.getConn() ;
+                String sql = "select * from users where username = ? and password = ?" ;
+                try {
+                    pst = con.prepareStatement(sql);
+
+                    pst.setString(1, username.getText());
+                    pst.setString(2, password.getText());
+                    rs = pst.executeQuery();
+                    if(rs.next ()){
+                        JOptionPane.showMessageDialog(null, "Username and password are correct");
+
+                    }else
+                        JOptionPane.showMessageDialog(null, "Invalid Username or password ");
+
+
+
+                }catch (Exception e ) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+
     }
