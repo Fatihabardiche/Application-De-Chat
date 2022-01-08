@@ -1,0 +1,72 @@
+.anchor{
+-fx-background-image:url('img.jpg');
+
+-fx-background-position: left top;
+-fx-background-color:"white";
+-fx-background-size:200 300;
+-fx-background-repeat:no-repeat;
+}
+
+
+
+.username{
+ -fx-background-radius:30;
+ -fx-background-color:#ededed;
+ -fx-font-size: 12;
+ -fx-border-width: 2;
+ -fx-font-family:"verdana";
+ -fx-padding:10;
+}
+
+.password{
+ -fx-background-radius:30;
+ -fx-background-color:#ededed;
+ -fx-font-size: 12;
+ -fx-border-width: 2;
+ -fx-font-family:"verdana";
+ -fx-padding:10;
+ -fx-translate-y:10;
+}
+
+.login{
+-fx-background-color:#7CB9E8;
+ -fx-background-radius:30;
+ -fx-font-family:"cursive";
+ -fx-text-fill:"white";
+ -fx-font-size: 13;
+ -fx-font-weight: bold;
+
+
+}
+
+.id{
+ -fx-background-image: url('logo.png');
+ -fx-background-size: 100% 100%;
+}
+
+.pnSignUp{
+-fx-background-radius:30;
+ -fx-background-color:#ededed;
+ -fx-font-size: 12;
+ -fx-border-width: 2;
+ -fx-font-family:"verdana";
+ -fx-padding:10;
+}
+
+.email{
+-fx-background-radius:30;
+ -fx-background-color:#ededed;
+ -fx-font-size: 12;
+ -fx-border-width: 2;
+ -fx-font-family:"verdana";
+ -fx-padding:10;
+}
+
+.send{
+-fx-background-color:#7CB9E8;
+-fx-background-radius:30;
+-fx-background-repeat: no repeat;
+-fx-background-size:cover;
+-fx-font-size: 15;
+
+}
