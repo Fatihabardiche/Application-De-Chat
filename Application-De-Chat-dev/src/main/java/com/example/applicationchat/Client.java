@@ -1,8 +1,12 @@
 package com.example.applicationchat;
+import com.example.applicationchat.dao.MysqlConnection;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Client {
@@ -70,4 +74,5 @@ public class Client {
         }
 
     }
+
 }

@@ -3,10 +3,9 @@ package com.example.applicationchat;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class AppApplication extends Application {
@@ -16,6 +15,7 @@ public class AppApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 700, 400);
         Image icon = new Image(getClass().getResourceAsStream("logo.png"));
         stage.getIcons().add(icon);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

@@ -3,6 +3,7 @@ package com.example.applicationchat;
 import com.example.applicationchat.dao.MysqlConnection;
 import com.example.applicationchat.models.User;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -62,13 +64,30 @@ public class Controller extends Thread {
             stage.show();
         }
     public void switchToScene3(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view1.fxml"));
+        Parent root = loader.load();
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        ControllerClient controller = loader.getController();
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                switch(event.getCode()) {
+                    case ENTER:
+                        controller.send();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        });
         stage.setTitle(username.getText());
         stage.setScene(scene);
         stage.show();
     }
+
         public void createUser(ActionEvent event) throws IOException, SQLException {
             String username = this.username.getText();
             String email = this.email.getText();
@@ -160,7 +179,7 @@ public class Controller extends Thread {
                         errors.setText("Invalid Username or password ");
                 }catch (Exception e ) {
                     System.out.println(e);
-                    errors.setText("Erreur de server");
+                    errors.setText("Erreur de serveur");
                 }
             }
 

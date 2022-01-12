@@ -11,7 +11,7 @@ public class MysqlConnection {
     public static Connection getConn() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:8080/applicationchat?autoReconnect=true&useSSL=false", "root", "1234567");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/applicationchat?autoReconnect=true&useSSL=false", "root", "");
             return conn;
         } catch (Exception e) {
             e.printStackTrace();

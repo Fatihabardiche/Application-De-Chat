@@ -6,6 +6,12 @@
 -fx-background-size:200 300;
 -fx-background-repeat:no-repeat;
 }
+.backroom{
+-fx-background-image:url('image.jpg');
+-fx-background-size:cover;
+
+-fx-background-repeat:no-repeat;
+}
 
 
 
@@ -29,7 +35,7 @@
 }
 
 .login{
--fx-background-color:#7CB9E8;
+-fx-background-color: #f39c12 ;
  -fx-background-radius:30;
  -fx-font-family:"cursive";
  -fx-text-fill:"white";
@@ -69,4 +75,7 @@
 -fx-background-size:cover;
 -fx-font-size: 15;
 
+}
+.scroll-pane.viewport{
+   -fx-background-color:transparent;
 }

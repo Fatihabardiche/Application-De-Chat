@@ -26,8 +26,6 @@ public class ServerThread extends Thread {
             //we have to do it manuallyy
             output = new PrintWriter(socket.getOutputStream(),true);
 
-
-            //inifite loop for server
             while(true) {
                 String outputString = input.readLine();
                 //if user types exit command
@@ -35,7 +33,6 @@ public class ServerThread extends Thread {
                     break;
                 }
                 printToALlClients(outputString);
-                //output.println("Server says " + outputString);
                 System.out.println("Server received " + outputString);
 
             }
@@ -47,10 +44,10 @@ public class ServerThread extends Thread {
     }
 
     private void printToALlClients(String outputString) {
-        int p= socket.getLocalPort();
+
         for( ServerThread sT: threadList) {
 
-            if (p!=socket.getLocalPort())
+            if (sT.getId()!=this.getId())
                 sT.output.println(outputString);
         }
 
