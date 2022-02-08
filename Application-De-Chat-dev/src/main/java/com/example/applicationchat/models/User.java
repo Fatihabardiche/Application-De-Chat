@@ -5,6 +5,7 @@ import lombok.*;
 
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -42,6 +43,45 @@ public class User {
 
     public void setPassword(String password){
         this.password=password;
+    }
+
+
+    public User() {
+        super();
+    }
+
+    public  long getIdOfEmail(String email) {
+        long IdUser = -1;
+        try {
+            Statement st;
+            st = con.createStatement();
+            ResultSet resu;
+            String sql = "select id from users where email = '"+email+"'";
+            resu = st.executeQuery(sql);
+            while(resu.next()) {
+                IdUser = resu.getLong("id");
+            }
+        }catch(SQLException e) {
+            IdUser = -1;
+        }
+        return IdUser;
+    }
+    public String GetMyPassword(long idusr) {
+        String password = "";
+        try {
+            Statement st;
+            st = con.createStatement();
+            ResultSet resu;
+            String sql=null;
+            sql = "select * from users where id = '"+idusr+"'";
+            resu = st.executeQuery(sql);
+            while(resu.next()) {
+                password = mysqlConnection.dechiffrer(resu.getString("password"));
+            }
+        }catch(SQLException e) {
+            password = null;
+        }
+        return password;
     }
 
 }
