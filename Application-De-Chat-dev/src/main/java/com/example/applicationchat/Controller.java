@@ -6,21 +6,27 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 
-public class Controller extends Thread {
+public class Controller extends Thread implements Initializable {
     MysqlConnection mysqlConnection = new MysqlConnection();
     Connection con = mysqlConnection.getConn();
 
@@ -30,15 +36,25 @@ public class Controller extends Thread {
     private TextField EmailUserForget;
     @FXML
     private Button IdObliePassword;
+    @FXML
+    private ImageView backButton;
 
     @FXML
     private Button SendButton;
+
+    @FXML
+    private CheckBox isVisible;
+
+    @FXML
+    private Button BtnSignIn;
     @FXML
     private TextField username;
     @FXML
     private TextField email;
     @FXML
-    private TextField password;
+    private PasswordField password;
+    @FXML
+    private TextField password1;
     @FXML
     private TextField confirmpassword;
 
@@ -199,6 +215,8 @@ public class Controller extends Thread {
         Parent root = FXMLLoader.load(getClass().getResource("forgetPassword.fxml"));
         Scene scene = new Scene(root, 600, 500);
         primaryStage.setResizable(false);
+        Image icon = new Image(getClass().getResourceAsStream("logo.png"));
+        primaryStage.getIcons().add(icon);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Reset password");
         // primaryStage.getIcons().add(new Image("file:../../Images/icon.png"));
@@ -246,5 +264,36 @@ public class Controller extends Thread {
                 dialog.showAndWait();
             }
         }
+    }
+    public void BacktoLogin(MouseEvent event) throws IOException {
+        this.SendButton.getScene().getWindow().hide();
+        Stage login = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Image icon = new Image(getClass().getResourceAsStream("logo.png"));
+        Scene scene = new Scene(root);
+        login.getIcons().add(icon);
+        login.setScene(scene);
+        login.show();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(this.BtnSignIn!=null){
+            this.password1.setVisible(false);
+        }
+    }
+    @FXML
+    public void showPassword() {
+        if(!isVisible.isSelected()){
+            this.password.setVisible(true);
+            this.password1.setVisible(false);
+            this.password.setText(password1.getText());
+        }
+        else {
+            this.password.setVisible(false);
+            this.password1.setVisible(true);
+            this.password1.setText(password.getText());
+        }
+
     }
 }
