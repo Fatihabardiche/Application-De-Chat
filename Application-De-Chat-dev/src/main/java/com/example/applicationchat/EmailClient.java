@@ -6,8 +6,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailClient {
-    private static final String senderEmail = "chatapplication619@gmail.com";//change with your sender email
-    private static final String senderPassword = "aqwszx123";//change with your sender password
+    private static final String senderEmail = "youremail@gmail.com";//change with your sender email
+    private static final String senderPassword = "xxxxxxxx";//change with your sender password
 
     public static boolean sendAsHtml(String to, String password) throws Exception {
         try {
