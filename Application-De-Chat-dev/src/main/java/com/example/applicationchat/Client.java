@@ -1,5 +1,6 @@
 package com.example.applicationchat;
 import com.example.applicationchat.dao.MysqlConnection;
+import com.example.applicationchat.models.User;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
@@ -10,6 +11,7 @@ import java.sql.Statement;
 
 
 public class Client {
+
     private  Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
@@ -31,7 +33,6 @@ public class Client {
             bufferedWriter.write(messageToServer);
             bufferedWriter.newLine();
             bufferedWriter.flush();
-
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error sending message to the client");

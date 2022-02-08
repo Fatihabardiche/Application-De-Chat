@@ -1,5 +1,6 @@
 package com.example.applicationchat;
 
+import com.example.applicationchat.models.User;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -9,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -26,6 +26,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerClient implements Initializable {
+
     @FXML
     private Button button_send;
     @FXML
@@ -35,6 +36,8 @@ public class ControllerClient implements Initializable {
     @FXML
     private ScrollPane sp_main;
     private Client client;
+    private User user;
+
     @FXML
     private Stage stage;
 
@@ -58,26 +61,20 @@ public class ControllerClient implements Initializable {
         button_send.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 String messageToSend =tf_message.getText();
-                String message = stage.getTitle() + ">" + messageToSend ;
-
-
-
                 if (!messageToSend.isEmpty()){
                     HBox hBox = new HBox();
                     hBox.setAlignment(Pos.CENTER_RIGHT);
                     hBox.setPadding(new Insets(5,5,5,10));
                     Text text =new Text(messageToSend);
                     TextFlow textFlow=new TextFlow(text);
-                    textFlow.setStyle("-fx-color:rgb(239,242,255);"+"-fx-background-color:rgb(15,125,242);"+
+                    textFlow.setStyle("-fx-color:rgb(239,242,255);"+"-fx-background-color:rgb(174, 214, 241);"+
                             "-fx-background-radius: 20px;");
                     textFlow.setPadding(new Insets(5,10,5,10));
-                    text.setFill(Color.color(0.934,0.945,0.996));
-
+                    text.setFill(Color.color(0.0,0.0,0.0));
                     hBox.getChildren().add(textFlow);
                     vbox_messages.getChildren().add(hBox);
-                    client.sendMessageToServer(message);
+                    client.sendMessageToServer(messageToSend);
                     tf_message.clear();
                 }
             }
@@ -104,17 +101,17 @@ public class ControllerClient implements Initializable {
     public void send() {
 
         String messageToSend =tf_message.getText();
+        
         if (!messageToSend.isEmpty()){
             HBox hBox = new HBox();
             hBox.setAlignment(Pos.CENTER_RIGHT);
             hBox.setPadding(new Insets(5,5,5,10));
             Text text =new Text(messageToSend);
             TextFlow textFlow=new TextFlow(text);
-            textFlow.setStyle("-fx-color:rgb(239,242,255);"+"-fx-background-color:rgb(15,125,242);"+
+            textFlow.setStyle("-fx-color:rgb(239,242,255);"+"-fx-background-color:rgb(174, 214, 241);"+
                     "-fx-background-radius: 20px;");
             textFlow.setPadding(new Insets(5,10,5,10));
-            text.setFill(Color.color(0.934,0.945,0.996));
-
+            text.setFill(Color.color(0.0,0.0,0.0));
             hBox.getChildren().add(textFlow);
             vbox_messages.getChildren().add(hBox);
             client.sendMessageToServer(messageToSend);

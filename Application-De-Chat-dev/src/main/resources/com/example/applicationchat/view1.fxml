@@ -9,13 +9,13 @@
 
 <AnchorPane fx:id="np_main" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="614.0" prefWidth="600.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.applicationchat.ControllerClient">
     <children>
-        <Button fx:id="button_send" layoutX="471.0" layoutY="546.0" maxWidth="150.0" prefHeight="35.0" prefWidth="67.0" styleClass="login" stylesheets="@style.css" text="send" />
+        <Button fx:id="button_send" layoutX="481.0" layoutY="546.0" maxWidth="150.0" prefHeight="35.0" prefWidth="34.0" style="-fx-background-color: transparante;" styleClass="send" stylesheets="@style.css" />
         <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="55.0" layoutY="110.0" prefHeight="428.0" prefWidth="489.0" styleClass="viewport" stylesheets="@style.css">
          <content>
-                <VBox fx:id="vbox_messages" prefHeight="427.0" prefWidth="443.0" style="-fx-background-color: #fef9e7;" />
+                <VBox fx:id="vbox_messages" prefHeight="427.0" prefWidth="443.0" style="-fx-background-color: white;" />
          </content>
         </ScrollPane>
       <Label layoutX="205.0" prefHeight="53.0" prefWidth="99.0" styleClass="id" stylesheets="@style.css" />
-        <TextField fx:id="tf_message" layoutX="60.0" layoutY="546.0" prefHeight="35.0" prefWidth="389.0" promptText="Write Here.........................." style="-fx-background-color: #fef9e7;" styleClass="username" stylesheets="@style.css" />
+        <TextField fx:id="tf_message" layoutX="83.0" layoutY="546.0" prefHeight="35.0" prefWidth="389.0" promptText="Write Here.........................." style="-fx-background-color: white;" styleClass="username" stylesheets="@style.css" />
     </children>
 </AnchorPane>

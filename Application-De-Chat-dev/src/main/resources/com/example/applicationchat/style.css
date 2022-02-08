@@ -69,10 +69,10 @@
 }
 
 .send{
--fx-background-color:#7CB9E8;
+-fx-background-image:url("send.png");
 -fx-background-radius:30;
 -fx-background-repeat: no repeat;
--fx-background-size:cover;
+-fx-background-size:contain;
 -fx-font-size: 15;
 
 }
