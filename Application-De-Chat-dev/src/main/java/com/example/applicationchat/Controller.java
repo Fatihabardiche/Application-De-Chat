@@ -93,19 +93,6 @@ public class Controller extends Thread implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         ControllerClient controller = loader.getController();
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                switch (event.getCode()) {
-                    case ENTER:
-                        controller.send();
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-        });
         stage.setTitle(username.getText());
         stage.setScene(scene);
         stage.show();

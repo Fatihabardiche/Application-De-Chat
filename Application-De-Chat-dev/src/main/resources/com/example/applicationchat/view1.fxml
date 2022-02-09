@@ -9,13 +9,14 @@
 
 <AnchorPane fx:id="np_main" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="614.0" prefWidth="600.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.applicationchat.ControllerClient">
     <children>
-        <Button fx:id="button_send" layoutX="481.0" layoutY="546.0" maxWidth="150.0" prefHeight="35.0" prefWidth="34.0" style="-fx-background-color: transparante;" styleClass="send" stylesheets="@style.css" />
-        <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="55.0" layoutY="110.0" prefHeight="428.0" prefWidth="489.0" styleClass="viewport" stylesheets="@style.css">
-         <content>
-                <VBox fx:id="vbox_messages" prefHeight="427.0" prefWidth="443.0" style="-fx-background-color: white;" />
-         </content>
+        <Button fx:id="button_send" layoutX="501.0" layoutY="546.0" maxWidth="150.0" prefHeight="35.0" prefWidth="34.0" style="-fx-background-color: transparante;" styleClass="send" stylesheets="@style.css" />
+        <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="55.0" layoutY="69.0" prefHeight="469.0" prefWidth="489.0" styleClass="viewport" stylesheets="@style.css">
+            <content>
+                <VBox fx:id="vbox_messages" prefHeight="468.0" prefWidth="474.0" style="-fx-background-color: white; -fx-border-color: #cbfafd; -fx-border-width: 3; -fx-border-radius: 20;" />
+            </content>
         </ScrollPane>
-      <Label layoutX="205.0" prefHeight="53.0" prefWidth="99.0" styleClass="id" stylesheets="@style.css" />
-        <TextField fx:id="tf_message" layoutX="83.0" layoutY="546.0" prefHeight="35.0" prefWidth="389.0" promptText="Write Here.........................." style="-fx-background-color: white;" styleClass="username" stylesheets="@style.css" />
+        <Label layoutX="251.0" layoutY="8.0" prefHeight="53.0" prefWidth="99.0" styleClass="id" stylesheets="@style.css" />
+        <TextField fx:id="tf_message" layoutX="106.0" layoutY="546.0" prefHeight="35.0" prefWidth="389.0" promptText="Write Here.........................." style="-fx-background-color: #cbfafd;" styleClass="username" stylesheets="@style.css" />
+      <Button layoutX="59.0" layoutY="545.0" mnemonicParsing="false" onAction="#Previous" prefHeight="35.0" prefWidth="34.0" styleClass="msg" stylesheets="@style.css" />
     </children>
 </AnchorPane>

@@ -29,6 +29,7 @@ public class User {
             st = con.createStatement();
             String sql = "insert into users (username,email,password) values ('"+this.username + "','" + this.email + "','" + this.password + "')";
             st.executeUpdate(sql);
+            st.executeUpdate("create table "+this.username+" (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,text VARCHAR(100) NOT NULL , ref INT);");
             b = true;
         } catch (SQLException e) {
             b = false;

@@ -19,7 +19,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <PasswordField fx:id="password" layoutX="362.0" layoutY="184.0" maxHeight="26.0" maxWidth="247.0" minHeight="26.0" minWidth="247.0" prefHeight="26.0" prefWidth="247.0" promptText="Password " styleClass="password" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="200.0" />
+            <PasswordField fx:id="password" layoutX="362.0" layoutY="184.0" maxHeight="30.0" maxWidth="247.0" minHeight="26.0" minWidth="247.0" prefHeight="30.0" prefWidth="248.0" promptText="Password " styleClass="password" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="200.0" />
             <TextField fx:id="password1" layoutX="350.0" layoutY="210.0" maxHeight="247.0" maxWidth="247.0" minHeight="26.0" minWidth="247.0" prefHeight="30.0" prefWidth="247.0" promptText="Password" styleClass="username" />
             <Button fx:id="BtnSignIn" layoutX="384.0" layoutY="284.0" maxHeight="35.0" maxWidth="142.0" minHeight="30.0" minWidth="135.0" mnemonicParsing="false" onAction="#Login" prefHeight="35.0" prefWidth="142.0" styleClass="login" stylesheets="@style.css" text="Login" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="284.0">
                <cursor>
