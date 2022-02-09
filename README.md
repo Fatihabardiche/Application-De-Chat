@@ -90,9 +90,8 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
 
 ## Demo
 <div align="center">
-    <img alt="Demo" src="https://i.ibb.co/FmLJMcb/Animation.gif" width=90%">
+  <img src="https://s10.gifyu.com/images/Animationdb015d138f568377.gif" alt="Animationdb015d138f568377.gif" border="0" />
 </div>
-
 
 
 
