@@ -75,17 +75,17 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
 
 * ### Email invalide
 <p align="left">
-  <img alt="Room" src="screenshots/errorEmail.jpeg" width="602" height="615">
+  <img alt="email invalide" src="screenshots/errorEmail.jpg" width="602" height="615">
 </p>
 
 * ### Email valide
 <p align="left">
-  <img alt="Room" src="screenshots/EmailValid.jpeg" width="602" height="615">
+  <img alt="email valide" src="screenshots/EmailValid.jpg" width="602" height="615">
 </p>
 
 * ### Reçois de mail conteint mot de passe
 <p align="left">
-  <img alt="Room" src="screenshots/recevePassword.jpeg" width="602" height="615">
+  <img alt="reçois de mail contient mot de passe" src="screenshots/recevePassword.jpg" width="602" height="615">
 </p>
 
 
