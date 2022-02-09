@@ -30,6 +30,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class ControllerClient implements Initializable {
@@ -39,6 +40,7 @@ public class ControllerClient implements Initializable {
     Connection con=mysqlConnection.getConn();
     PreparedStatement pst = null;
     ResultSet rs= null;
+    Statement st;
 
     @FXML
     private Button button_send;
@@ -65,12 +67,6 @@ public class ControllerClient implements Initializable {
             pst.executeUpdate();
             rs=pst.executeQuery("SELECT * FROM "+name+"");
 
-            while(rs.next()){
-
-                System.out.println(rs.getString("text"));
-
-            }
-
         } catch (Exception e) {
             System.out.println(e);
 
@@ -85,7 +81,7 @@ public class ControllerClient implements Initializable {
             System.out.println("connected to server");
 
         }catch (IOException e){
-            e.printStackTrace();
+            System.out.println(e);
 
         }
         vbox_messages.heightProperty().addListener(new ChangeListener<Number>() {
@@ -120,7 +116,7 @@ public class ControllerClient implements Initializable {
 
                         add_msg(actionEvent,tf_message,0);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        System.out.println(e);
                     }
                     tf_message.clear();
                 }
@@ -152,6 +148,29 @@ public class ControllerClient implements Initializable {
 
         }
     }
+    public void handle2(String msg) {
+        String messageToSend = msg;
+
+        if (!messageToSend.isEmpty()) {
+            HBox hBox = new HBox();
+            hBox.setAlignment(Pos.CENTER_LEFT);
+            hBox.setPadding(new Insets(5, 5, 5, 10));
+            Text text = new Text(messageToSend);
+            TextFlow textFlow = new TextFlow(text);
+            textFlow.setStyle("-fx-background-color: rgb(233,233,235);"+
+                    "-fx-background-radius: 15px;");
+            textFlow.setPadding(new Insets(5,5,5,10));
+            text.setFill(Color.color(0, 0, 0));
+
+            hBox.getChildren().add(textFlow);
+            vbox_messages.getChildren().add(hBox);
+
+
+
+
+
+        }
+    }
     public static void addLabel(String msgFromServer,VBox vBox ){
         String [] tab = new String[2];
         tab = msgFromServer.split(":");
@@ -162,8 +181,7 @@ public class ControllerClient implements Initializable {
         Text text1 = new Text(tab[1]);
         TextFlow textFlow= new TextFlow(text);
         TextFlow textFlow1= new TextFlow(text1);
-        textFlow.setStyle("-fx-color: rgb(207,52,118);"+
-                "-fx-background-radius: 15px;");
+        textFlow.setStyle("-fx-background-radius: 15px;");
         text.setStyle("-fx-color: rgb(207,52,118);");
         textFlow1.setStyle("-fx-background-color: rgb(233,233,235);"+
                 "-fx-background-radius: 15px;");
@@ -179,26 +197,29 @@ public class ControllerClient implements Initializable {
         });
 
     }
+
     public  void Previous(ActionEvent event) throws  Exception {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         String name = stage.getTitle();
 
-        String sql = "insert into "+name+" (text) values (?)";
+
 
         try {
-            pst = con.prepareStatement(sql);
-            rs=pst.executeQuery("SELECT * FROM "+name+"");
+            st = con.createStatement();
+
+            rs=st.executeQuery("SELECT * FROM "+ name +"");
 
             while(rs.next()){
+                System.out.println(rs.getString("text"));
 
                 if(rs.getInt("ref")==0) handle1(rs.getString("text"));
-                else
-                    ControllerClient.addLabel(rs.getString("text"),vbox_messages);
+
+                if(rs.getInt("ref")==1)    handle2(rs.getString("text"));
 
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e);
 
 
         }
