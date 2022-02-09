@@ -89,7 +89,7 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
 </p>
 
 ## Demo
-<a href="https://i.imgur.com/2dKxNG6.gif"><img src="https://i.imgur.com/2dKxNG6.gif" alt="Animationdb015d138f568377.gif" border="0" /></a>
+<div width="70%"><img src="https://i.imgur.com/2dKxNG6.gif" alt="Animationdb015d138f568377.gif" border="0" /></div>
 
 
 **Encadré par :** ***[Mr.Abderrazzak NEJEOUI](https://github.com/nejeoui)***
