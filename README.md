@@ -89,12 +89,7 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
 </p>
 
 ## Demo
-<div align="center">
-  <img src="https://s10.gifyu.com/images/Animationdb015d138f568377.gif" alt="Animationdb015d138f568377.gif" border="0" />
-</div>
-
-
-
+<a href="https://gifyu.com/image/SzkeQ"><img src="https://s10.gifyu.com/images/Animationdb015d138f568377.gif" alt="Animationdb015d138f568377.gif" border="0" /></a>
 
 
 **Encadré par :** ***[Mr.Abderrazzak NEJEOUI](https://github.com/nejeoui)***
