@@ -11,11 +11,7 @@ De nos jours, Beaucoup des gens considérent les réseaux sociaux et les platfor
 - [@Nour Elhouda Taroudi](https://github.com/nourelhouda-taroudi)
 - [@Saddoug](https://github.com/Saddoug)
 
-1. Minimiser le coût de voyage.
-1. Faciliter de trouver le transport.
-1. Faire connaissance entre les gens.
-1. Avoir de la compagnie lors de voyage
-1. La lutte contre la pollution et à la préservation des ressources naturelle.
+
 
 ## Usage
 Pour démarrer l'application vous allez besoin de cloner le dépôt
