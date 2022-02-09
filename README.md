@@ -63,6 +63,11 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
   <img alt="Apperçu le mot de passe" src="screenshots/showPassword.jpeg" width="640" height="426">
 </p>
 
+* ### Recevoir du mot de passe en cas d'oublie 
+<p align="left">
+  <img alt="Savoir le mot de passe en cas d'oublie et le reçoit par email" src="screenshots/resetPassword.jpeg" width="640" height="426">
+</p>
+
 * ### Room
 <p align="left">
   <img alt="Room" src="screenshots/room.jpeg" width="602" height="615">
