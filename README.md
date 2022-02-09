@@ -88,6 +88,10 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
   <img alt="reçois de mail contient mot de passe" src="screenshots/recevePassword.jpg" width="602" height="615">
 </p>
 
+## Demo
+<div align="center">
+    <img alt="Demo" src="https://i.ibb.co/FmLJMcb/Animation.gif" width=90%">
+</div>
 
 
 
