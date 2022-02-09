@@ -18,7 +18,7 @@ Ce travail est un projet d'école dont on a crée une application qui permettre 
 - Javafx
 ## Lancement de l'application
 Pour démarrer l'application vous allez besoin de cloner le dépôt
-- [OFANS-Application de chat](https://github.com/nourelhouda-taroudi/Application-De-Chat)
+- [OFANS-Application de chat](https://github.com/nourelhouda-taroudi/Application-De-Chat.git)
 - Ensuite exécuter le Serveur en premier et puis les clients
 - Chaque utilisateur doit créer un compte
 - Aprés la création, l'utilisateur doit s'authentifier
