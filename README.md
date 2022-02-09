@@ -27,5 +27,6 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
  
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/0.jpg)
+![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/1.jpg)
+![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/2.jpg)
