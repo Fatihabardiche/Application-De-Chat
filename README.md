@@ -73,6 +73,24 @@ Pour démarrer l'application vous allez besoin de cloner le dépôt
   <img alt="Room" src="screenshots/room.jpeg" width="602" height="615">
 </p>
 
+* ### Email invalide
+<p align="left">
+  <img alt="Room" src="screenshots/errorEmail.jpeg" width="602" height="615">
+</p>
+
+* ### Email valide
+<p align="left">
+  <img alt="Room" src="screenshots/EmailValid.jpeg" width="602" height="615">
+</p>
+
+* ### Reçois de mail conteint mot de passe
+<p align="left">
+  <img alt="Room" src="screenshots/recevePassword.jpeg" width="602" height="615">
+</p>
+
+
+
+
 
 
 
