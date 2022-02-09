@@ -1,32 +1,79 @@
+<h1 align="center">OFANS</h1>
+<h3 align="center">JavaFX Desktop application</h3>
 
-# Application de chat à base des sockets et JavaFX
-
-Ce travail est un projet d'école dont on a crée une application qui permettre de communiquer deux ou plusieurs utilisateurs dans une room en utilisant les sockets en Java et JavaFX pour les interfaces graphiques.
-
+## Introduction
+De nos jours, Beaucoup des gens considérent les réseaux sociaux et les platformes de communication comme une partie essentielle dans la vie personnel et professionel. Ce travail est un projet d'école dont on a crée une application qui permettre de communiquer deux ou plusieurs utilisateurs dans une room en utilisant les sockets en Java et JavaFX pour les interfaces graphiques.
 
 ## Développer par
+- [@OumaimaTaj](https://github.com/OumaimaTaj)
+- [@Fatihabardiche](https://github.com/Fatihabardiche)
+- [@NaciriAli](https://https://github.com/NaciriAli)
+- [@Nour Elhouda Taroudi](https://github.com/nourelhouda-taroudi)
+- [@Saddoug](https://github.com/Saddoug)
 
-- [@katherinepeterson](https://www.github.com/octokatherine)
-- [@katherinepeterson](https://www.github.com/octokatherine)
-- [@katherinepeterson](https://www.github.com/octokatherine)
-- [@katherinepeterson](https://www.github.com/octokatherine)
-- [@katherinepeterson](https://www.github.com/octokatherine)
-## Prérequis
- Avant que vous pouvez exécuter l'application vous allez besoin de ses outils
+1. Minimiser le coût de voyage.
+1. Faciliter de trouver le transport.
+1. Faire connaissance entre les gens.
+1. Avoir de la compagnie lors de voyage
+1. La lutte contre la pollution et à la préservation des ressources naturelle.
 
-- Java JDK
-- Javafx
-## Lancement de l'application
+## Usage
 Pour démarrer l'application vous allez besoin de cloner le dépôt
-- [OFANS-Application de chat](https://github.com/nourelhouda-taroudi/Application-De-Chat.git)
-- Ensuite exécuter le Serveur en premier et puis les clients
-- Chaque utilisateur doit créer un compte
-- Aprés la création, l'utilisateur doit s'authentifier
-- L'utilisateur peut envoyer et recevoir les messages des autres utilisateurs dans la même room
-- En cas d'oublie du mot de passe, l'utilisateur peut recevoir son mot de passe par email 
- 
-## Screenshots
+1. Créer un nouveu projet JavaFx.
+2. Installation est simple, via la commande :
+  ```java
+    git clone https://github.com/nourelhouda-taroudi/Application-De-Chat.git
+    cd Application-De-Chat
+  ```
 
-![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/0.jpg)
-![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/1.jpg)
-![App Screenshot](https://github.com/nourelhouda-taroudi/Application-De-Chat/blob/main/screenshots/2.jpg)
+3. Ensuite, vous pouvez simplement exécuter le projet en exécutant le Serveur en premier et puis les clients.
+4. Chaque utilisateur doit créer un compte
+5. Aprés la création, l'utilisateur doit s'authentifier
+6. L'utilisateur peut envoyer et recevoir les messages des autres utilisateurs dans la même room
+7. En cas d'oublie du mot de passe, l'utilisateur peut recevoir son mot de passe par email
+## Interfaces de l'application
+* ### Login
+<p align="left">
+  <img alt="Login" src="screenshots/login.jpeg" width="640" height="426">
+</p>
+
+* ### Signup
+<p align="left">
+  <img alt="Signup" src="screenshots/signUp.jpeg" width="640" height="426">
+</p>
+
+* ### Interface Utilisateur
+<p align="left">
+  <img alt="Email invalide" src="screenshots/invalidEmail.jpeg" width="640" height="426">
+</p>
+
+* ### Remplit les champs
+<p align="left">
+  <img alt="champs non remplis" src="screenshots/rempliFields.jpeg" width="640" height="426">
+</p>
+
+* ### Confirmation du mot de passe
+<p align="left">
+  <img alt="Confirmation de password" src="screenshots/passwordConfirm.jpeg" width="640" height="426">
+</p>
+
+* ### Validité du mot de passe
+<p align="left">
+  <img alt="Au moins 8 caractéres pour mot de passe" src="screenshots/passwordSize.jpeg" width="640" height="426">
+</p>
+
+* ### Option d'afficher le mot de passe 
+<p align="left">
+  <img alt="Apperçu le mot de passe" src="screenshots/showPassword.jpeg" width="640" height="426">
+</p>
+
+* ### Room
+<p align="left">
+  <img alt="Room" src="screenshots/room.jpeg" width="602" height="615">
+</p>
+
+
+
+
+**Encadré par :** ***[Mr.Abderrazzak NEJEOUI](https://github.com/nejeoui)***
+
