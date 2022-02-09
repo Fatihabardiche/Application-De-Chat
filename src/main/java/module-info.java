@@ -6,7 +6,7 @@ module com.example.applicationchat {
     requires AnimateFX;
     requires java.sql;
     requires static lombok;
-    requires java.mail;
+    requires javax.mail;
 
 
     opens com.example.applicationchat to javafx.fxml;
